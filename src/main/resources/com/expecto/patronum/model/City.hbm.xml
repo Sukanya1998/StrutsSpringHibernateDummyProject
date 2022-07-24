@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.expecto.patronum.model.City" 
+        table="city">
+
+        <id name="cityId" type="java.lang.Integer">
+            <column name="city_id" />
+            <generator class="identity" />
+        </id>
+        <property name="city" type="string">
+            <column name="city" not-null="true" />
+        </property>
+        <many-to-one name="countryId" class="com.expecto.patronum.model.Country" 
+        lazy="false" fetch="select">
+        <column name="country_id"></column>
+        </many-to-one>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

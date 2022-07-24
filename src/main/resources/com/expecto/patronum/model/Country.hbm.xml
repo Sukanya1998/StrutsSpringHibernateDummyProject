@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.expecto.patronum.model.Country" 
+        table="country">
+
+        <id name="countryId" type="java.lang.Integer">
+            <column name="country_id" />
+            <generator class="identity" />
+        </id>
+        <property name="country" type="string">
+            <column name="country" not-null="true" />
+		</property>
+        <property name="lastUpdate" type="timestamp">
+            <column name="last_update" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
